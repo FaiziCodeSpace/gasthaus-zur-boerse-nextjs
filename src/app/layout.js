@@ -2,11 +2,20 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { Playfair_Display } from 'next/font/google';
+import { Diplomata_SC } from 'next/font/google';
+import Footer from "@/components/layout/Footer";
 
 const playfair = Playfair_Display({
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-playfair',
+});
+
+const diplomata = Diplomata_SC({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-diplomata',
 });
 
 export const metadata = {
@@ -18,11 +27,12 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} h-full antialiased`}
+      className={`${playfair.variable} ${diplomata.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col ">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
