@@ -5,20 +5,20 @@ import { Clock } from "lucide-react";
 const stats = [
     {
         num: "10",
-        title: "KM Delivery Radius",
-        desc: "Minimum order: €75",
+        title: "KM Lieferradius",
+        desc: "Mindestbestellwert: 75 €",
     },
     {
         num: "20",
-        title: "KM Catering Radius",
-        desc: "Booking required at least 3 days in advance",
+        title: "KM Catering-Radius",
+        desc: "Buchung mindestens 3 Tage im Voraus erforderlich",
     },
 ];
 
 export default function Services() {
     return (
         <section className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
-            <Heading heading="Services" />
+            <Heading heading="Leistungen" />
 
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
 
@@ -44,20 +44,20 @@ export default function Services() {
                 {/* Right — catering card */}
                 <div className="flex-1 w-full bg-white border border-foreground/10 rounded-2xl p-8 flex flex-col gap-4">
                     <h3 className="text-[22px] sm:text-[26px] font-bold font-playfair text-foreground text-center">
-                        Professional Catering
+                        Professionelles Catering
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600 text-center">
-                        Host your guests with the flavors of Gasthaus zur Börse. We provide high-quality catering for private parties and business functions.
+                        Verwöhnen Sie Ihre Gäste mit den Aromen des Gasthaus zur Börse. Wir bieten hochwertiges Catering für private Feiern und geschäftliche Veranstaltungen.
                     </p>
                     <div className="flex items-center justify-center gap-2 text-red-500 text-sm font-semibold">
                         <Clock className="w-4 h-4 flex-shrink-0" />
-                        Please book at least 3 days in advance.
+                        Bitte mindestens 3 Tage im Voraus buchen.
                     </div>
                     <Link
                         href="/speisekarte"
                         className="mt-2 inline-flex items-center justify-center bg-foreground text-white hover:bg-foreground/80 px-6 py-3 text-sm font-semibold transition-all duration-300 rounded-full"
                     >
-                        View Menu
+                        Speisekarte ansehen
                     </Link>
                 </div>
 

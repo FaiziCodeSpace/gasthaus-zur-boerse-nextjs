@@ -4,17 +4,17 @@ import Link from "next/link";
 import { MoveRight } from "lucide-react";
 
 const points = [
-    "Located in the historic heart of Arnsberg, Gasthaus zur Börse offers five cozy guest rooms designed for maximum comfort and relaxation.",
-    "Our rooms combine traditional wooden architecture with modern amenities, providing a warm atmosphere that feels like a home away from home.",
-    "We prioritize personal service and authentic regional hospitality for all our guests.",
+    "Das Gasthaus zur Börse liegt in Celle, Niedersachsen, und bietet fünf gemütliche Gästezimmer für maximalen Komfort und Erholung.",
+    "Unsere Zimmer verbinden traditionelle Holzarchitektur mit modernem Komfort und schaffen so eine warme Atmosphäre, die sich an wie ein zweites Zuhause anfühlt.",
+    "Persönlicher Service und authentische regionale Gastfreundschaft stehen für uns bei jedem Gast im Vordergrund.",
 ];
 
 export default function Guesthouse() {
     return (
-        <section className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
+        <section id="gastehaus" className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
             <Heading
-                heading="Authentic Guesthouse Charm"
-                paragraph="Experience the warmth and hospitality of our guesthouse, where every detail is crafted to provide you with a memorable stay."
+                heading="Authentischer Charme unseres Gasthauses"
+                paragraph="Erleben Sie die Wärme und Gastfreundschaft unseres Gasthauses, in dem jedes Detail für einen unvergesslichen Aufenthalt gestaltet ist."
             />
 
             <div className="flex flex-col lg:flex-row gap-10 items-center">
@@ -22,7 +22,7 @@ export default function Guesthouse() {
                 {/* Text */}
                 <div className="flex-1">
                     <h2 className="text-[22px] sm:text-[28px] font-bold text-black font-playfair mb-6">
-                        About Our Guesthouse
+                        Über unser Gasthaus
                     </h2>
                     <ul className="flex flex-col gap-4">
                         {points.map((point, i) => (

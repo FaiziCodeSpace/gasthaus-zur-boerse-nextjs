@@ -4,11 +4,12 @@ import Navbar from "@/components/layout/Navbar";
 import { Playfair_Display } from 'next/font/google';
 import { Diplomata_SC } from 'next/font/google';
 import Footer from "@/components/layout/Footer";
+import { LenisProvider } from "@/lib/lenis";
 
 const playfair = Playfair_Display({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-playfair',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
 });
 
 const diplomata = Diplomata_SC({
@@ -30,9 +31,11 @@ export default function RootLayout({ children }) {
       className={`${playfair.variable} ${diplomata.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col ">
-        <Navbar />
-        {children}
-        <Footer />
+        <LenisProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );

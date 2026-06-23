@@ -1,16 +1,17 @@
 'use client';
 import Image from "next/image";
+import Link from "next/link";
 import { MoveRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect, useCallback, useRef } from "react";
 
 const slides = [
     {
-        src: "/images/hero/hero-biergarten-terrasse-arnsberg.webp",
-        alt: "Gasthaus zur Börse Terrasse in Arnsberg",
+        src: "/images/hero/hero-biergarten-terrasse-celle.webp",
+        alt: "Gasthaus zur Börse Terrasse in Celle",
     },
     {
-        src: "/images/hero/hero-restaurant-innen-arnsberg.webp",
-        alt: "Gasthaus zur Börse Restaurant Innenraum in Arnsberg",
+        src: "/images/hero/hero-restaurant-innen-celle.webp",
+        alt: "Gasthaus zur Börse Restaurant Innenraum in Celle",
     },
 ];
 
@@ -45,15 +46,24 @@ export function Hero() {
         autoPlayRef.current = setInterval(next, 5000);
     };
 
+    function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (window.__lenis) {
+            window.__lenis.scrollTo(el, { offset: -70, duration: 1.4 });
+        } else {
+            el.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
     return (
-        <section className="min-h-screen w-full overflow-hidden relative flex flex-col items-center justify-center">
+        <section id="start" className="min-h-screen w-full overflow-hidden relative flex flex-col items-center justify-center">
 
             {/* Slides */}
             {slides.map((slide, i) => (
                 <div
                     key={slide.src}
-                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${i === current ? 'opacity-100' : 'opacity-0'
-                        }`}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${i === current ? 'opacity-100' : 'opacity-0'}`}
                 >
                     <Image
                         src={slide.src}
@@ -85,6 +95,7 @@ export function Hero() {
             >
                 <ChevronRight className="w-5 h-5" />
             </button>
+
             {/* Dot indicators */}
             <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
                 {slides.map((_, i) => (
@@ -92,8 +103,7 @@ export function Hero() {
                         key={i}
                         onClick={() => handleManual(() => goTo(i))}
                         aria-label={`Bild ${i + 1}`}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 bg-white' : 'w-2 bg-white/40'
-                            }`}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 bg-white' : 'w-2 bg-white/40'}`}
                     />
                 ))}
             </div>
@@ -101,17 +111,23 @@ export function Hero() {
             {/* Content */}
             <div className="relative z-20 flex flex-col items-center text-center px-6 sm:px-10 md:px-4 w-full md:w-[80%] lg:w-[70%]">
                 <h1 className="text-white text-[42px] sm:text-[64px] md:text-[80px] lg:text-[96px] leading-none font-bold">
-                    Welcome to Gasthaus zur Börse
+                    Willkommen im Gasthaus zur Börse in Celle
                 </h1>
                 <p className="text-white/80 mt-4 text-sm sm:text-base text-center md:text-left md:px-20 max-w-2xl md:max-w-none">
                     Genießen Sie hausgemachte deutsche Spezialitäten, saisonale Gerichte und komfortable Gästezimmer in einer warmen und einladenden Atmosphäre.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 w-full sm:w-auto">
-                    <button className="border-white border-2 text-white hover:bg-white hover:text-foreground px-6 py-3 cursor-pointer flex items-center justify-center transition-all duration-300 text-sm sm:text-base">
-                        Explore Menu <MoveRight className="w-4 h-4 ml-2" />
-                    </button>
-                    <button className="border-white border-2 text-white hover:bg-white hover:text-foreground px-6 py-3 cursor-pointer flex items-center justify-center transition-all duration-300 text-sm sm:text-base">
-                        Explore Rooms <MoveRight className="w-4 h-4 ml-2" />
+                    <Link
+                        href="/speisekarte"
+                        className="border-white border-2 text-white hover:bg-white hover:text-foreground px-6 py-3 cursor-pointer flex items-center justify-center transition-all duration-300 text-sm sm:text-base"
+                    >
+                        Speisekarte entdecken <MoveRight className="w-4 h-4 ml-2" />
+                    </Link>
+                    <button
+                        onClick={() => scrollToSection('zimmer')}
+                        className="border-white border-2 text-white hover:bg-white hover:text-foreground px-6 py-3 cursor-pointer flex items-center justify-center transition-all duration-300 text-sm sm:text-base"
+                    >
+                        Zimmer entdecken <MoveRight className="w-4 h-4 ml-2" />
                     </button>
                 </div>
             </div>

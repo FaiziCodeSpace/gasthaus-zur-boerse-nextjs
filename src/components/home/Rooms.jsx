@@ -3,33 +3,33 @@ import Heading from "../layout/Heading";
 
 const rooms = [
     {
-        img: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Doppelzimmer im Gasthaus zur Börse in Arnsberg",
-        title: "Double Room",
-        desc: "3 Rooms Available. Perfect for couples seeking a rustic and cozy escape.",
+        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Doppelzimmer im Gasthaus zur Börse in Celle",
+        title: "Doppelzimmer",
+        desc: "3 Zimmer verfügbar. Perfekt für Paare, die einen rustikalen und gemütlichen Rückzugsort suchen.",
     },
     {
-        img: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Einzelzimmer im Gasthaus zur Börse in Arnsberg",
-        title: "Single Room",
-        desc: "1 Room Available. A peaceful corner for solo travelers or professionals.",
+        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Einzelzimmer im Gasthaus zur Börse in Celle",
+        title: "Einzelzimmer",
+        desc: "1 Zimmer verfügbar. Eine ruhige Unterkunft für Alleinreisende oder Geschäftsreisende.",
     },
     {
-        img: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Familienzimmer im Gasthaus zur Börse in Arnsberg",
-        title: "Family Room",
-        desc: "Spacious layout featuring 1 double bed + 1 single bed for comfort.",
+        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Familienzimmer im Gasthaus zur Börse in Celle",
+        title: "Familienzimmer",
+        desc: "Großzügiger Grundriss mit 1 Doppelbett und 1 Einzelbett für besonderen Komfort.",
     },
 ];
 
 export default function Rooms() {
     return (
-        <section className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
+        <section id="zimmer" className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
             <Heading
-                heading="Our Room Categories"
-                paragraph="Entire hotel can be booked if all rooms are reserved"
+                heading="Unsere Zimmerkategorien"
+                paragraph="Bei Reservierung aller Zimmer kann das gesamte Gasthaus gebucht werden"
                 num="05"
-                comment="Exclusive Rooms"
+                comment="Exklusive Zimmer"
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -7,19 +7,21 @@ import SeasonalDishes from "@/components/home/SeasonalDishes";
 import Services from "@/components/home/Services";
 import SignatureDishes from "@/components/home/SignatureDishes";
 import Welcome from "@/components/home/Welcome";
+import ScrollOnMount from "@/components/layout/ScrollOnMount";
 
 
 export default function Home() {
   return (
     <>
+      <ScrollOnMount />
       <Hero />
       <Welcome />
       <Events />
       <SignatureDishes />
-      <SeasonalDishes/>
+      <SeasonalDishes />
       <Guesthouse />
       <Rooms />
-      <Services/>
+      <Services />
     </>
   );
 }

@@ -2,14 +2,14 @@
 import Image from "next/image";
 import Heading from "../layout/Heading";
 import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight, MoveRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const seasonalDishes = [
     {
         season: "Spargelsaison",
         months: [3, 4, 5],
-        img: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Frischer weißer Spargel vom Gasthaus zur Börse in Arnsberg",
+        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Frischer weißer Spargel vom Gasthaus zur Börse in Celle",
         dishes: [
             { name: "Frischer Weißer Spargel", description: "Zarter weißer Spargel mit Sauce Hollandaise, gekochtem Schinken und Salzkartoffeln." }
         ]
@@ -17,8 +17,8 @@ const seasonalDishes = [
     {
         season: "Pfifferlingssaison",
         months: [5, 6, 7, 8],
-        img: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Pfifferlings-Schnitzel vom Gasthaus zur Börse in Arnsberg",
+        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Pfifferlings-Schnitzel vom Gasthaus zur Börse in Celle",
         dishes: [
             { name: "Pfifferlings-Schnitzel", description: "Knuspriges Schnitzel mit einer cremigen Pfifferlings-Rahmsauce verfeinert." },
             { name: "Pfifferlings-Pasta", description: "Frische Spätzle mit goldenen Pfifferlingen, Butter und Kräutern." }
@@ -27,8 +27,8 @@ const seasonalDishes = [
     {
         season: "Wintersaison",
         months: [10, 11, 0],
-        img: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Knuspriges Schweinshaxe vom Gasthaus zur Börse in Arnsberg",
+        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Knuspriges Schweinshaxe vom Gasthaus zur Börse in Celle",
         dishes: [
             { name: "Knuspriges Schweinshaxe", description: "Langsam gebratene Schweinshaxe mit goldener Kruste, serviert mit Sauerkraut und Kartoffelknödeln." }
         ]
@@ -36,8 +36,8 @@ const seasonalDishes = [
     {
         season: "Weihnachtssaison",
         months: [11, 0],
-        img: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Gebratene Ente und Gans vom Gasthaus zur Börse in Arnsberg",
+        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Gebratene Ente und Gans vom Gasthaus zur Börse in Celle",
         dishes: [
             { name: "Gebratene Ente & Gans", description: "Traditionelle Weihnachtsente und -gans, langsam gebraten und serviert mit Rotkohl und Semmelknödeln." }
         ]
@@ -45,8 +45,8 @@ const seasonalDishes = [
     {
         season: "Grünkohlsaison",
         months: [0, 1, 2],
-        img: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Grünkohl mit Pinkel vom Gasthaus zur Börse in Arnsberg",
+        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Grünkohl mit Pinkel vom Gasthaus zur Börse in Celle",
         dishes: [
             { name: "Grünkohl mit Pinkel", description: "Hausgemachter Grünkohl mit geräucherter Pinkelwurst, Speck und Kartoffeln — ein nordwestdeutscher Winterklassiker." }
         ]
@@ -108,7 +108,7 @@ export default function SeasonalDishes() {
     const fadeKey = `${seasonIndex}-${dishIndex}`;
 
     return (
-        <section className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
+        <section id="saisonal" className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
             <Heading heading="Saisonale Gerichte" paragraph="Entdecken Sie unsere saisonalen Spezialitäten, die von der frischen Zutatenwahl und der passionierten Zubereitung geprägt sind." btnLabel="Alle Gerichte ansehen"
                 btnHref="/speisekarte" />
 

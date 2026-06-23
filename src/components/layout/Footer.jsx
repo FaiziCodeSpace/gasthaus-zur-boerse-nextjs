@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 const quickLinks = [
     { name: "Start", href: "/" },
     { name: "Speisekarte", href: "/speisekarte" },
     { name: "Gästehaus", href: "/#gastehaus" },
     { name: "Kontakt", href: "/kontakt" },
+    { name: "Impressum", href: "/impressum" },
+    { name: "Datenschutz", href: "/datenschutz" },
 ];
 
 export default function Footer() {
@@ -21,7 +23,7 @@ export default function Footer() {
             {/* CTA Section */}
             <div className="px-6 sm:px-10 lg:px-25 pt-16 pb-10">
                 <h2 className="text-[48px] sm:text-[72px] lg:text-[96px] font-bold font-playfair text-black text-center leading-none mb-10">
-                    Book Your Stay Today
+                    Jetzt Ihren Aufenthalt buchen
                 </h2>
 
                 {/* Map + Info card */}
@@ -30,14 +32,14 @@ export default function Footer() {
                     {/* Map */}
                     <div className="w-full lg:w-[55%] h-[260px] sm:h-[320px] lg:h-[360px]">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78858.3!2d8.0641!3d51.3996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b90b!2sArnsberg!5e0!3m2!1sde!2sde!4v1"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d730.1137584529033!2d10.06934600925633!3d52.59933653394575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b0181efa152303%3A0xbae898037ae9b05c!2sHannoversche%20Heerstra%C3%9Fe%20132%2C%2029227%20Celle-Westercelle%2C%20Germany!5e1!3m2!1sen!2s!4v1782214477706!5m2!1sen!2s"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
-                            title="Gasthaus zur Börse Arnsberg Standort"
+                            title="Gasthaus zur Börse Celle Standort"
                         />
                     </div>
 
@@ -47,15 +49,15 @@ export default function Footer() {
                             Gasthaus zur Börse
                         </h3>
                         <p className="text-sm sm:text-base text-gray-600">
-                            Authentic German cuisine, comfortable accommodation, and warm hospitality. Enjoy traditional flavors, seasonal specialties, and a relaxing stay in the heart of the region.
+                            Authentische deutsche Küche, komfortable Unterkunft und herzliche Gastfreundschaft. Genießen Sie traditionelle Gerichte, saisonale Spezialitäten und einen entspannten Aufenthalt im Herzen der Region.
                         </p>
                         <Link
                             href="/kontakt"
                             className="inline-flex items-center justify-center bg-foreground text-white hover:bg-foreground/80 px-6 py-3 text-sm font-semibold transition-all duration-300 rounded-full w-fit"
                         >
-                            Über uns
+                            Jetzt anfragen
                         </Link>
-                    </div>
+                    </div>  
                 </div>
             </div>
 
@@ -94,15 +96,15 @@ export default function Footer() {
                     <ul className="flex flex-col gap-3">
                         <li className="flex items-center gap-2 text-sm text-gray-600">
                             <Mail className="w-4 h-4 flex-shrink-0" />
-                            <a href="mailto:info@gasthaus-zur-boerse.de">
-                                info@gasthaus-zur-boerse.de
+                            <a href="mailto:Rakanbedel7@gmail.com">
+                                Rakanbedel7@gmail.com
                             </a>
                         </li>
 
                         <li className="flex items-center gap-2 text-sm text-gray-600">
                             <Phone className="w-4 h-4 flex-shrink-0" />
-                            <a href="tel:+49xxxxxxxxx">
-                                +49 xxx xxxxxxx
+                            <a href="tel:+4951418180 3">
+                                05141 81803
                             </a>
                         </li>
                     </ul>
@@ -111,15 +113,7 @@ export default function Footer() {
                 {/* Social */}
                 <div className="flex items-end gap-4 sm:ml-auto">
                     <a
-                        href="https://facebook.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <FaFacebookF className="w-5 h-5" />
-                    </a>
-
-                    <a
-                        href="https://instagram.com"
+                        href="https://www.instagram.com/zurborsecelle/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

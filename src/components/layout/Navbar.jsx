@@ -1,11 +1,23 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState, useRef } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useRef, useEffect } from "react";
+
+// Maps href hashes to section IDs on the home page
+function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (window.__lenis) {
+        window.__lenis.scrollTo(el, { offset: -70, duration: 1.4 });
+    } else {
+        el.scrollIntoView({ behavior: "smooth" });
+    }
+}
 
 export default function Navbar() {
     const pathname = usePathname();
+    const router = useRouter();
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
@@ -19,13 +31,38 @@ export default function Navbar() {
             dropdown: [
                 { name: 'Zimmer', href: '/#zimmer' },
                 { name: 'Gästehaus', href: '/#gastehaus' },
-                { name: 'Catering', href: '/#catering' },
-                { name: 'Veranstaltungen', href: '/#veranstaltungen' },
+                { name: 'Events & Catering', href: '/#events' },
                 { name: 'Saisonales', href: '/#saisonal' },
             ]
         },
         { name: 'Kontakt', href: '/kontakt' },
     ];
+
+    // On home page load, check if there's a hash in the URL and scroll to it
+    useEffect(() => {
+        if (pathname !== '/') return;
+        const hash = window.location.hash.replace('#', '');
+        if (!hash) return;
+        const timeout = setTimeout(() => scrollToSection(hash), 100);
+        return () => clearTimeout(timeout);
+    }, [pathname]);
+
+    // Intercepts clicks on hash links (dropdown items like /#zimmer)
+    function handleHashLink(e, href) {
+        const isHash = href.startsWith('/#');
+        if (!isHash) return; // let Next/Link handle normal routes naturally
+
+        e.preventDefault();
+        const id = href.replace('/#', '');
+
+        if (pathname === '/') {
+            // Already on home — just scroll
+            scrollToSection(id);
+        } else {
+            // Navigate home, ScrollOnMount will pick up the hash
+            router.push(href);
+        }
+    }
 
     const openDropdown = () => {
         clearTimeout(closeTimer.current);
@@ -44,15 +81,17 @@ export default function Navbar() {
     return (
         <>
             {/* ── Desktop Navbar ── */}
-            <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 h-[70px] justify-center items-center bg-foreground rounded-b-full px-8">
+            <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 h-[70px] justify-center items-center bg-foreground rounded-b-full px-8 cursor-pointer">
                 {/* Logo */}
                 <div className="absolute left-12">
-                    <Image
-                        src="/images/logos/logo.svg"
-                        alt="Gasthaus zur Börse Logo"
-                        width={100}
-                        height={50}
-                    />
+                    <Link href="/">
+                        <Image
+                            src="/images/logos/logo.svg"
+                            alt="Gasthaus zur Börse Logo"
+                            width={100}
+                            height={50}
+                        />
+                    </Link>
                 </div>
 
                 {/* Links */}
@@ -81,7 +120,10 @@ export default function Navbar() {
                                                 <li key={item.name}>
                                                     <Link
                                                         href={item.href}
-                                                        onClick={() => setDropdownOpen(false)}
+                                                        onClick={(e) => {
+                                                            setDropdownOpen(false);
+                                                            handleHashLink(e, item.href);
+                                                        }}
                                                         className={`block px-5 py-3 text-sm text-white font-medium hover:bg-white/10 transition-colors ${i !== link.dropdown.length - 1 ? 'border-b border-white/10' : ''}`}
                                                     >
                                                         {item.name}
@@ -133,7 +175,6 @@ export default function Navbar() {
                         <li key={link.name}>
                             {link.dropdown ? (
                                 <div>
-                                    {/* Dropdown trigger */}
                                     <button
                                         onClick={() => setMobileDropdownOpen(prev => !prev)}
                                         className="w-full flex justify-between items-center px-4 py-3.5 text-white font-semibold text-base rounded-xl hover:bg-white/10 transition-colors"
@@ -150,14 +191,16 @@ export default function Navbar() {
                                         </svg>
                                     </button>
 
-                                    {/* Dropdown items */}
                                     <div className={`overflow-hidden transition-all duration-300 ${mobileDropdownOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                                         <ul className="ml-4 mt-1 border-l border-white/20 pl-4 flex flex-col gap-1">
                                             {link.dropdown.map(item => (
                                                 <li key={item.name}>
                                                     <Link
                                                         href={item.href}
-                                                        onClick={closeMobileMenu}
+                                                        onClick={(e) => {
+                                                            closeMobileMenu();
+                                                            handleHashLink(e, item.href);
+                                                        }}
                                                         className="block px-3 py-3 text-sm text-white/80 font-medium hover:text-white hover:bg-white/10 rounded-lg transition-colors"
                                                     >
                                                         {item.name}

@@ -6,35 +6,34 @@ import { MoveRight } from "lucide-react";
 const events = [
     {
         title: "Events",
-
-        img: "/images/events/events-veranstaltung-gasthaus-boerse-arnsberg.webp",
-        alt: "Firmenveranstaltung im Gasthaus zur Börse in Arnsberg",
+        img: "/images/events/events-veranstaltung-gasthaus-boerse-celle.webp",
+        alt: "Firmenveranstaltung im Gasthaus zur Börse in Celle",
         points: [
-            "Weddings",
-            "Birthday Parties",
-            "Anniversaries",
-            "Professional Events",
+            "Hochzeiten",
+            "Geburtstagsfeiern",
+            "Jubiläen",
+            "Firmenfeiern",
         ],
     },
     {
         title: "Catering",
-        img: "/images/events/catering-gasthaus-boerse-arnsberg.webp",
-        alt: "Catering-Buffet mit deutschen Spezialitäten vom Gasthaus zur Börse in Arnsberg",
+        img: "/images/events/catering-gasthaus-boerse-celle.webp",
+        alt: "Catering-Buffet mit deutschen Spezialitäten vom Gasthaus zur Börse in Celle",
         points: [
-            "Corporate Events",
-            "Private Parties",
-            "Best Dining Experience",
-            "Food & Beverage Services",
+            "Firmenveranstaltungen",
+            "Private Feiern",
+            "Bestes kulinarisches Erlebnis",
+            "Speisen- & Getränkeservice",
         ],
     },
 ];
 
 export default function Events() {
     return (
-        <section className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
+        <section id="events" className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
             <Heading
-                heading="Our Events & Catering"
-                paragraph="Host your perfect event with the flavors of Gasthaus zur Börse."
+                heading="Unsere Events & Catering in Celle"
+                paragraph="Feiern Sie Ihre perfekte Veranstaltung mit den Aromen des Gasthaus zur Börse."
             />
 
             <div className="flex flex-col md:flex-row gap-6 lg:gap-8">

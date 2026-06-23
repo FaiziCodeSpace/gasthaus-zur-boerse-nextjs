@@ -1,42 +1,40 @@
 import Image from "next/image";
 import Heading from "../layout/Heading";
-import Link from "next/link";
-import { MoveRight } from "lucide-react";
 
 const featured = {
-    src: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-    alt: "Hausgemachtes Schnitzel im Gasthaus zur Börse Arnsberg",
-    title: "Homemade Schnitzel",
-    desc: "Crispy 300g pork schnitzel served with golden fried potatoes.",
+    src: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+    alt: "Hausgemachtes Schnitzel im Gasthaus zur Börse Celle",
+    title: "Hausgemachtes Schnitzel",
+    desc: "Knuspriges 300g Schweineschnitzel mit goldgelben Bratkartoffeln.",
 };
 
 const sideDishes = [
     {
-        src: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Jägerschnitzel im Gasthaus zur Börse Arnsberg",
+        src: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Jägerschnitzel im Gasthaus zur Börse Celle",
         title: "Jägerschnitzel",
-        desc: "Rich mushroom cream sauce.",
+        desc: "Sahnige Champignonsauce.",
     },
     {
-        src: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Jägerschnitzel im Gasthaus zur Börse Arnsberg",
+        src: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Jägerschnitzel im Gasthaus zur Börse Celle",
         title: "Jägerschnitzel",
-        desc: "Rich mushroom cream sauce.",
+        desc: "Sahnige Champignonsauce.",
     },
     {
-        src: "/images/welcome/hero-gasthaus-aussen-arnsberg.webp",
-        alt: "Jägerschnitzel im Gasthaus zur Börse Arnsberg",
+        src: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        alt: "Jägerschnitzel im Gasthaus zur Börse Celle",
         title: "Jägerschnitzel",
-        desc: "Rich mushroom cream sauce.",
+        desc: "Sahnige Champignonsauce.",
     },
 ];
 
 export default function SignatureDishes() {
     return (
-        <section className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
+        <section id="signaturgerichte" className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
 
             <Heading
-                heading="Our Signature Dishes"
+                heading="Unsere Spezialitäten"
                 btnLabel="Alle Gerichte ansehen"
                 btnHref="/speisekarte"
             />
