@@ -2,6 +2,7 @@ import { Playfair_Display, Diplomata_SC } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Loader from "@/components/layout/Loader";
 import { LenisProvider } from "@/lib/lenis";
 
 const playfair = Playfair_Display({
@@ -68,6 +69,11 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: "/images/logos/logo.svg",
+    shortcut: "/images/logos/logo.svg",
+    apple: "/images/logos/logo.svg",
   },
 };
 
@@ -138,6 +144,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full flex flex-col ">
         <LenisProvider>
+          <Loader />
           <Navbar />
           {children}
           <Footer />

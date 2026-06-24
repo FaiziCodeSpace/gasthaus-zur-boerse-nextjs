@@ -58,8 +58,8 @@ export default function DatenschutzPage() {
                         </p>
                         <p>
                             Telefon:{" "}
-                            <a href="tel:+4951419937973" className="text-black hover:text-foreground transition-colors">
-                                +49 514 19937973
+                            <a href="tel:+49514181803" className="text-black hover:text-foreground transition-colors">
+                                +49 514 181803
                             </a>
                         </p>
                     </div>

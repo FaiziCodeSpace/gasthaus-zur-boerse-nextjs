@@ -88,7 +88,7 @@ const menuData = {
         { num: 64, name: "Gebratener Lachs", desc: "Lachs mit Gemüse, Kartoffeln in Zitronen-Butter-Sauce", price: "19,90€" },
     ],
     "Nachspeisen": [
-        { num: 65, name: "Warm Lava Cakes mit Eis", desc: "", price: "7,90€" },
+        { num: 65, name: "Warme Lava Cakes mit Eis", desc: "", price: "7,90€" },
         { num: 66, name: "Drei Kugeln Eis", desc: "", price: "4,90€" },
         { num: 67, name: "Käsekuchen", desc: "", price: "7,90€" },
     ],

@@ -6,12 +6,12 @@ const stats = [
     {
         num: "10",
         title: "KM Lieferradius",
-        desc: "Mindestbestellwert: 75 €",
+        desc: "Ab 10 km Entfernung gilt ein Mindestbestellwert von 75 €.",
     },
     {
         num: "20",
         title: "KM Catering-Radius",
-        desc: "Buchung mindestens 3 Tage im Voraus erforderlich",
+        desc: "Buchung mindestens 3 Tage im Voraus erforderlich.",
     },
 ];
 

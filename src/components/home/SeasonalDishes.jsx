@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const seasonalDishes = [
     {
         season: "Spargelsaison",
+        // German white asparagus season: roughly mid-April through Johannistag (June 24)
         months: [3, 4, 5],
         dishes: [
             {
@@ -19,7 +20,8 @@ const seasonalDishes = [
     },
     {
         season: "Pfifferlingssaison",
-        months: [5, 6, 7, 8],
+        // Chanterelle season: typically starts in June, main season July–October
+        months: [5, 6, 7, 8, 9],
         dishes: [
             {
                 name: "Pfifferlings-Schnitzel",
@@ -36,24 +38,13 @@ const seasonalDishes = [
         ]
     },
     {
-        season: "Wintersaison",
-        months: [10, 11, 0],
-        dishes: [
-            {
-                name: "Knusprige Schweinshaxe",
-                description: "Langsam gebratene Schweinshaxe mit knuspriger Kruste, serviert mit Sauerkraut und Kartoffelknödeln.",
-                img: "/images/seasonal/schweinshaxe-gasthaus-zur-boerse-celle.webp",
-                alt: "Knusprige Schweinshaxe mit Sauerkraut im Gasthaus zur Börse in Celle"
-            }
-        ]
-    },
-    {
-        season: "Weihnachtssaison",
-        months: [11, 0],
+        season: "Martinsgans- & Weihnachtssaison",
+        // Goose/duck roast tradition runs from St. Martin's Day (Nov 11) through Christmas
+        months: [10, 11],
         dishes: [
             {
                 name: "Gebratene Ente & Gans",
-                description: "Traditionelle Weihnachtsente und Weihnachtsgans, langsam gebraten und serviert mit Rotkohl und Semmelknödeln.",
+                description: "Traditionelle Martins- und Weihnachtsgans sowie Ente, langsam gebraten und serviert mit Rotkohl und Semmelknödeln.",
                 img: "/images/seasonal/gebratene-ente-und-gans-gasthaus-zur-boerse-celle.webp",
                 alt: "Gebratene Ente und Gans im Gasthaus zur Börse in Celle"
             }
@@ -61,13 +52,21 @@ const seasonalDishes = [
     },
     {
         season: "Grünkohlsaison",
-        months: [0, 1, 2],
+        // Norddeutsch kale season: fresh kale available from autumn through early spring,
+        // traditionally enjoyed after the first frost
+        months: [8, 9, 10, 11, 0, 1, 2],
         dishes: [
             {
                 name: "Grünkohl mit Pinkel",
                 description: "Hausgemachter Grünkohl mit geräucherter Pinkelwurst, Speck und Kartoffeln – ein norddeutscher Winterklassiker.",
                 img: "/images/seasonal/gruenkohl-mit-pinkel-gasthaus-zur-boerse-celle.webp",
                 alt: "Grünkohl mit Pinkel im Gasthaus zur Börse in Celle"
+            },
+            {
+                name: "Knusprige Schweinshaxe",
+                description: "Langsam gebratene Schweinshaxe mit knuspriger Kruste, serviert mit Sauerkraut und Kartoffelknödeln.",
+                img: "/images/seasonal/schweinshaxe-gasthaus-zur-boerse-celle.webp",
+                alt: "Knusprige Schweinshaxe mit Sauerkraut im Gasthaus zur Börse in Celle"
             }
         ]
     }
