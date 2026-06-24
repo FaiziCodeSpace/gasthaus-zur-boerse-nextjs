@@ -2,30 +2,30 @@ import Image from "next/image";
 import Heading from "../layout/Heading";
 
 const featured = {
-    src: "/images/welcome/hero-gasthaus-aussen-celle.webp",
-    alt: "Hausgemachtes Schnitzel im Gasthaus zur Börse Celle",
-    title: "Hausgemachtes Schnitzel",
-    desc: "Knuspriges 300g Schweineschnitzel mit goldgelben Bratkartoffeln.",
+    src: "/images/signatureDishes/jagerschnitzel-celle.webp",
+    alt: "Jägerschnitzel mit Champignonrahmsauce und Bratkartoffeln auf weißem Teller im Gasthaus zur Börse Celle",
+    title: "Jägerschnitzel",
+    desc: "Knuspriges Schweineschnitzel mit hausgemachter Champignonrahmsauce und goldenen Bratkartoffeln – ein beliebter Klassiker der deutschen Küche.",
 };
 
 const sideDishes = [
     {
-        src: "/images/welcome/hero-gasthaus-aussen-celle.webp",
-        alt: "Jägerschnitzel im Gasthaus zur Börse Celle",
-        title: "Jägerschnitzel",
-        desc: "Sahnige Champignonsauce.",
+        src: "/images/signatureDishes/gansebraten-celle.webp",
+        alt: "Traditioneller Gänsebraten mit Rotkohl und Kartoffelklößen im Gasthaus zur Börse Celle",
+        title: "Gänsebraten",
+        desc: "Saftiger Gänsebraten mit Rotkohl, Kartoffelklößen und aromatischer Bratensauce – besonders beliebt in der Winter- und Weihnachtszeit.",
     },
     {
-        src: "/images/welcome/hero-gasthaus-aussen-celle.webp",
-        alt: "Jägerschnitzel im Gasthaus zur Börse Celle",
-        title: "Jägerschnitzel",
-        desc: "Sahnige Champignonsauce.",
+        src: "/images/signatureDishes/schweinshaxe-celle.webp",
+        alt: "Knusprige Schweinshaxe mit Sauerkraut und Bratkartoffeln im Gasthaus zur Börse Celle",
+        title: "Schweinshaxe",
+        desc: "Knusprig gebratene Schweinshaxe mit Sauerkraut, Bratkartoffeln und Senf – ein herzhaftes deutsches Traditionsgericht.",
     },
     {
-        src: "/images/welcome/hero-gasthaus-aussen-celle.webp",
-        alt: "Jägerschnitzel im Gasthaus zur Börse Celle",
-        title: "Jägerschnitzel",
-        desc: "Sahnige Champignonsauce.",
+        src: "/images/signatureDishes/gruenkohl-celle.webp",
+        alt: "Traditioneller Grünkohl mit Mettwurst, Kasseler und Bratkartoffeln im Gasthaus zur Börse Celle",
+        title: "Grünkohl",
+        desc: "Hausgemachter Grünkohl mit Mettwurst, Kasseler und Bratkartoffeln – ein norddeutscher Klassiker voller Geschmack.",
     },
 ];
 
@@ -55,7 +55,7 @@ export default function SignatureDishes() {
                         <h2 className="text-white font-playfair font-bold text-[24px] sm:text-[32px]">
                             {featured.title}
                         </h2>
-                        <p className="text-white/70 text-sm mt-1 max-w-[280px]">
+                        <p className="text-white/70 text-sm mt-1 max-w-[450px]">
                             {featured.desc}
                         </p>
                     </div>

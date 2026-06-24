@@ -3,19 +3,19 @@ import Heading from "../layout/Heading";
 
 const rooms = [
     {
-        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        img: "/images/rooms/doppelzimmer-gasthaus-zur-boerse-celle.webp",
         alt: "Doppelzimmer im Gasthaus zur Börse in Celle",
         title: "Doppelzimmer",
         desc: "3 Zimmer verfügbar. Perfekt für Paare, die einen rustikalen und gemütlichen Rückzugsort suchen.",
     },
     {
-        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        img: "/images/rooms/einzelzimmer-gasthaus-zur-boerse-celle.webp",
         alt: "Einzelzimmer im Gasthaus zur Börse in Celle",
         title: "Einzelzimmer",
         desc: "1 Zimmer verfügbar. Eine ruhige Unterkunft für Alleinreisende oder Geschäftsreisende.",
     },
     {
-        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
+        img: "/images/rooms/familienzimmer-gasthaus-zur-boerse-celle.webp",
         alt: "Familienzimmer im Gasthaus zur Börse in Celle",
         title: "Familienzimmer",
         desc: "Großzügiger Grundriss mit 1 Doppelbett und 1 Einzelbett für besonderen Komfort.",

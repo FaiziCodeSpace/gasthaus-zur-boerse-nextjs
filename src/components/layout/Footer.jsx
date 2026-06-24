@@ -57,7 +57,7 @@ export default function Footer() {
                         >
                             Jetzt anfragen
                         </Link>
-                    </div>  
+                    </div>
                 </div>
             </div>
 
@@ -96,15 +96,15 @@ export default function Footer() {
                     <ul className="flex flex-col gap-3">
                         <li className="flex items-center gap-2 text-sm text-gray-600">
                             <Mail className="w-4 h-4 flex-shrink-0" />
-                            <a href="mailto:Rakanbedel7@gmail.com">
-                                Rakanbedel7@gmail.com
+                            <a href="mailto:gasthauszuerboerse@web.de">
+                                gasthauszuerboerse@web.de
                             </a>
                         </li>
 
                         <li className="flex items-center gap-2 text-sm text-gray-600">
                             <Phone className="w-4 h-4 flex-shrink-0" />
-                            <a href="tel:+4951418180 3">
-                                05141 81803
+                            <a href="tel:+4951418180">
+                                +49 5141 8180
                             </a>
                         </li>
                     </ul>

@@ -158,7 +158,7 @@ export default function Menu() {
     const [activeCategory, setActiveCategory] = useState(categories[0]);
 
     return (
-        <section className="w-full bg-background py-16 px-6 sm:px-10 lg:px-25">
+        <section className="w-full bg-background pt-28 pb-16 px-6 sm:px-10 lg:px-25">
             <Heading heading="Unsere Speisekarte" paragraph="Hausgemachte deutsche Küche — frische Zutaten, traditionelle Rezepte." />
 
             {/* category tab pills */}

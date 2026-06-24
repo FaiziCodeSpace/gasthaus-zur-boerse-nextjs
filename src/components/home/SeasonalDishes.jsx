@@ -8,47 +8,67 @@ const seasonalDishes = [
     {
         season: "Spargelsaison",
         months: [3, 4, 5],
-        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
-        alt: "Frischer weißer Spargel vom Gasthaus zur Börse in Celle",
         dishes: [
-            { name: "Frischer Weißer Spargel", description: "Zarter weißer Spargel mit Sauce Hollandaise, gekochtem Schinken und Salzkartoffeln." }
+            {
+                name: "Frischer Weißer Spargel",
+                description: "Zarter weißer Spargel mit Sauce Hollandaise, gekochtem Schinken und Salzkartoffeln.",
+                img: "/images/seasonal/weisser-spargel-gasthaus-zur-boerse-celle.webp",
+                alt: "Weißer Spargel mit Schinken und Salzkartoffeln im Gasthaus zur Börse in Celle"
+            }
         ]
     },
     {
         season: "Pfifferlingssaison",
         months: [5, 6, 7, 8],
-        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
-        alt: "Pfifferlings-Schnitzel vom Gasthaus zur Börse in Celle",
         dishes: [
-            { name: "Pfifferlings-Schnitzel", description: "Knuspriges Schnitzel mit einer cremigen Pfifferlings-Rahmsauce verfeinert." },
-            { name: "Pfifferlings-Pasta", description: "Frische Spätzle mit goldenen Pfifferlingen, Butter und Kräutern." }
+            {
+                name: "Pfifferlings-Schnitzel",
+                description: "Knuspriges Schnitzel mit cremiger Pfifferlings-Rahmsauce und saisonischen Pfifferlingen.",
+                img: "/images/seasonal/pfifferlings-schnitzel-gasthaus-zur-boerse-celle.webp",
+                alt: "Pfifferlings-Schnitzel im Gasthaus zur Börse in Celle"
+            },
+            {
+                name: "Pfifferlings-Spätzle",
+                description: "Hausgemachte Spätzle mit frischen Pfifferlingen, Butter und Kräutern.",
+                img: "/images/seasonal/pfifferlings-pasta-gasthaus-zur-boerse-celle.webp",
+                alt: "Pfifferlings-Spätzle im Gasthaus zur Börse in Celle"
+            }
         ]
     },
     {
         season: "Wintersaison",
         months: [10, 11, 0],
-        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
-        alt: "Knuspriges Schweinshaxe vom Gasthaus zur Börse in Celle",
         dishes: [
-            { name: "Knuspriges Schweinshaxe", description: "Langsam gebratene Schweinshaxe mit goldener Kruste, serviert mit Sauerkraut und Kartoffelknödeln." }
+            {
+                name: "Knusprige Schweinshaxe",
+                description: "Langsam gebratene Schweinshaxe mit knuspriger Kruste, serviert mit Sauerkraut und Kartoffelknödeln.",
+                img: "/images/seasonal/schweinshaxe-gasthaus-zur-boerse-celle.webp",
+                alt: "Knusprige Schweinshaxe mit Sauerkraut im Gasthaus zur Börse in Celle"
+            }
         ]
     },
     {
         season: "Weihnachtssaison",
         months: [11, 0],
-        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
-        alt: "Gebratene Ente und Gans vom Gasthaus zur Börse in Celle",
         dishes: [
-            { name: "Gebratene Ente & Gans", description: "Traditionelle Weihnachtsente und -gans, langsam gebraten und serviert mit Rotkohl und Semmelknödeln." }
+            {
+                name: "Gebratene Ente & Gans",
+                description: "Traditionelle Weihnachtsente und Weihnachtsgans, langsam gebraten und serviert mit Rotkohl und Semmelknödeln.",
+                img: "/images/seasonal/gebratene-ente-und-gans-gasthaus-zur-boerse-celle.webp",
+                alt: "Gebratene Ente und Gans im Gasthaus zur Börse in Celle"
+            }
         ]
     },
     {
         season: "Grünkohlsaison",
         months: [0, 1, 2],
-        img: "/images/welcome/hero-gasthaus-aussen-celle.webp",
-        alt: "Grünkohl mit Pinkel vom Gasthaus zur Börse in Celle",
         dishes: [
-            { name: "Grünkohl mit Pinkel", description: "Hausgemachter Grünkohl mit geräucherter Pinkelwurst, Speck und Kartoffeln — ein nordwestdeutscher Winterklassiker." }
+            {
+                name: "Grünkohl mit Pinkel",
+                description: "Hausgemachter Grünkohl mit geräucherter Pinkelwurst, Speck und Kartoffeln – ein norddeutscher Winterklassiker.",
+                img: "/images/seasonal/gruenkohl-mit-pinkel-gasthaus-zur-boerse-celle.webp",
+                alt: "Grünkohl mit Pinkel im Gasthaus zur Börse in Celle"
+            }
         ]
     }
 ];
@@ -135,8 +155,8 @@ export default function SeasonalDishes() {
                 <div className="relative w-full h-[220px] sm:h-[300px] lg:h-[380px] rounded-xl overflow-hidden">
                     <FadeContent watchKey={fadeKey}>
                         <Image
-                            src={activeSeason.img}
-                            alt={activeSeason.alt}
+                            src={activeDish.img}
+                            alt={activeDish.alt}
                             fill
                             className="object-cover"
                         />
@@ -168,12 +188,14 @@ export default function SeasonalDishes() {
                         {activeDish.description}
                     </p>
                 </FadeContent>
+
+               
             </div>
 
             {/* Bottom cards */}
             {hasMultipleSeasons && (
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-                    {currentDishes.map((dish, i) => (
+                    {currentDishes.map((season, i) => (
                         <button
                             key={i}
                             onClick={() => { setSeasonIndex(i); setDishIndex(0); }}
@@ -181,11 +203,11 @@ export default function SeasonalDishes() {
                                 } bg-white shadow-sm`}
                         >
                             <div className="relative w-full h-[100px] sm:h-[120px]">
-                                <Image src={dish.img} alt={dish.alt} fill className="object-cover" />
+                                <Image src={season.dishes[0].img} alt={season.dishes[0].alt} fill className="object-cover" />
                             </div>
                             <div className="p-3">
-                                <p className="text-[11px] sm:text-xs font-semibold text-foreground/60 mb-1">{dish.season}</p>
-                                <h3 className="text-xs sm:text-sm font-bold text-foreground font-playfair leading-tight">{dish.dishes[0].name}</h3>
+                                <p className="text-[11px] sm:text-xs font-semibold text-foreground/60 mb-1">{season.season}</p>
+                                <h3 className="text-xs sm:text-sm font-bold text-foreground font-playfair leading-tight">{season.dishes[0].name}</h3>
                             </div>
                         </button>
                     ))}
