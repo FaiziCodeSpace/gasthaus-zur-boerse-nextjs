@@ -13,6 +13,10 @@ const slides = [
         src: "/images/hero/hero-restaurant-innen-celle.webp",
         alt: "Gasthaus zur Börse Restaurant Innenraum in Celle",
     },
+    {
+        src: "/images/hero/hero-restaurant-flur-celle.webp",
+        alt: "Gasthaus zur Börse Restaurant Innenraum in Celle",
+    }
 ];
 
 export function Hero() {
@@ -80,6 +84,7 @@ export function Hero() {
 
             {/* Prev button */}
             <button
+                type="button"
                 onClick={() => handleManual(prev)}
                 aria-label="Vorheriges Bild"
                 className="hidden sm:flex absolute left-5 z-20 w-11 h-11 items-center justify-center border border-white/40 text-white hover:bg-white/20 transition-colors duration-200 rounded-full"
@@ -89,6 +94,7 @@ export function Hero() {
 
             {/* Next button */}
             <button
+                type="button"
                 onClick={() => handleManual(next)}
                 aria-label="Nächstes Bild"
                 className="hidden sm:flex absolute right-5 z-20 w-11 h-11 items-center justify-center border border-white/40 text-white hover:bg-white/20 transition-colors duration-200 rounded-full"
@@ -100,6 +106,7 @@ export function Hero() {
             <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
                 {slides.map((_, i) => (
                     <button
+                        type="button"
                         key={i}
                         onClick={() => handleManual(() => goTo(i))}
                         aria-label={`Bild ${i + 1}`}
@@ -124,6 +131,7 @@ export function Hero() {
                         Speisekarte entdecken <MoveRight className="w-4 h-4 ml-2" />
                     </Link>
                     <button
+                        type="button"
                         onClick={() => scrollToSection('zimmer')}
                         className="border-white border-2 text-white hover:bg-white hover:text-foreground px-6 py-3 cursor-pointer flex items-center justify-center transition-all duration-300 text-sm sm:text-base"
                     >

@@ -164,6 +164,7 @@ export default function SeasonalDishes() {
                     {hasMultipleSeasons && (
                         <>
                             <button
+                                type="button"
                                 onClick={prevSeason}
                                 aria-label="Vorherige Saison"
                                 className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center border border-white/40 bg-white/20 backdrop-blur-sm hover:bg-white hover:text-foreground text-white rounded-full transition-all duration-200"
@@ -171,6 +172,7 @@ export default function SeasonalDishes() {
                                 <ChevronLeft className="w-4 h-4" />
                             </button>
                             <button
+                                type="button"
                                 onClick={nextSeason}
                                 aria-label="Nächste Saison"
                                 className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center border border-white/40 bg-white/20 backdrop-blur-sm hover:bg-white hover:text-foreground text-white rounded-full transition-all duration-200"
@@ -196,6 +198,7 @@ export default function SeasonalDishes() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
                     {currentDishes.map((season, i) => (
                         <button
+                            type="button"
                             key={i}
                             onClick={() => { setSeasonIndex(i); setDishIndex(0); }}
                             className={`text-left rounded-xl overflow-hidden border-2 transition-all duration-200 ${i === seasonIndex ? 'border-foreground' : 'border-transparent'

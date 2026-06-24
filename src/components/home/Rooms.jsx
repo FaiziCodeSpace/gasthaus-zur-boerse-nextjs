@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Heading from "../layout/Heading";
 
 const rooms = [
@@ -56,9 +57,12 @@ export default function Rooms() {
                             <p className="text-white/60 text-sm">
                                 {room.desc}
                             </p>
-                            <button className="mt-auto border-2 border-white text-white hover:bg-white hover:text-foreground px-6 py-2.5 text-sm font-semibold transition-all duration-300 rounded-full">
+                            <Link
+                                href="/kontakt"
+                                className="mt-auto border-2 border-white text-white hover:bg-white hover:text-foreground px-6 py-2.5 text-sm font-semibold transition-all duration-300 rounded-full text-center"
+                            >
                                 Jetzt buchen
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}

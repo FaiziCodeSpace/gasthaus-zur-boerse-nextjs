@@ -43,7 +43,7 @@ export default function Navbar() {
         if (pathname !== '/') return;
         const hash = window.location.hash.replace('#', '');
         if (!hash) return;
-        const timeout = setTimeout(() => scrollToSection(hash), 100);
+        const timeout = setTimeout(() => scrollToSection(hash), 350);
         return () => clearTimeout(timeout);
     }, [pathname]);
 

@@ -3,13 +3,22 @@
 
 import { createContext, useContext, useEffect, useRef } from "react";
 import Lenis from "lenis";
+import { usePathname } from "next/navigation";
 
 const LenisContext = createContext(null);
 
 export function LenisProvider({ children }) {
   const lenisRef = useRef(null);
+  const pathname = usePathname();
 
+  // Initialise Lenis once
   useEffect(() => {
+    // Tell the browser not to restore scroll position on its own —
+    // Lenis owns scrolling from here.
+    if (typeof window !== "undefined") {
+      history.scrollRestoration = "manual";
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -17,8 +26,6 @@ export function LenisProvider({ children }) {
     });
 
     lenisRef.current = lenis;
-
-    // Expose lenis globally so Navbar can access it without prop drilling
     window.__lenis = lenis;
 
     function raf(time) {
@@ -32,6 +39,14 @@ export function LenisProvider({ children }) {
       window.__lenis = null;
     };
   }, []);
+
+  // On every route change: scroll to top immediately (unless there's a hash)
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash && lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
+  }, [pathname]);
 
   return (
     <LenisContext.Provider value={lenisRef}>
