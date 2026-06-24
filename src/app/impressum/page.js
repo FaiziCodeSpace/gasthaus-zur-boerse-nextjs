@@ -46,7 +46,7 @@ export default function ImpressumPage() {
                     </h2>
                     <div className="text-sm sm:text-base text-gray-700 leading-relaxed flex flex-col gap-1">
                         <p className="font-semibold text-black">Gasthaus zur Börse</p>
-                        <p>Inhaber: Arne Broker</p>
+                        <p>Inhaber: Rakan Keti</p>
                         <p>Hannoversche Heerstraße 132</p>
                         <p>29227 Celle</p>
                         <p>Deutschland</p>

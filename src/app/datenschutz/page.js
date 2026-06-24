@@ -47,7 +47,7 @@ export default function DatenschutzPage() {
                     <div className="text-sm sm:text-base text-gray-700 leading-relaxed flex flex-col gap-1">
                         <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
                         <p className="font-semibold text-black mt-2">Gasthaus zur Börse</p>
-                        <p>Arne Broker</p>
+                        <p>Rakan Keti</p>
                         <p>Hannoversche Heerstraße 132</p>
                         <p>29227 Celle</p>
                         <p>
