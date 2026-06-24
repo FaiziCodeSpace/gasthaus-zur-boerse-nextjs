@@ -2,8 +2,26 @@ import ContactForm from "@/components/contact/ContactForm";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const metadata = {
-    title: "Kontakt | Gasthaus zur Börse Celle",
-    description: "Kontaktieren Sie das Gasthaus zur Börse in Celle. Reservierungen, Catering-Anfragen und allgemeine Fragen.",
+    title: "Kontakt",
+    description:
+        "Kontaktieren Sie das Gasthaus zur Börse in Celle für Reservierungen, Catering-Anfragen und allgemeine Fragen. Wir freuen uns auf Ihre Nachricht.",
+    keywords: [
+        "Kontakt Gasthaus zur Börse",
+        "Restaurant Celle Kontakt",
+        "Reservierung Celle",
+        "Gasthaus Celle Anfrage",
+    ],
+    alternates: {
+        canonical: "https://gasthauszurboerse.de/kontakt",
+    },
+    openGraph: {
+        title: "Kontakt | Gasthaus zur Börse Celle",
+        description:
+            "Reservierungen, Catering-Anfragen und allgemeine Fragen an das Gasthaus zur Börse in Celle, Niedersachsen.",
+        url: "https://gasthauszurboerse.de/kontakt",
+        locale: "de_DE",
+        siteName: "Gasthaus zur Börse Celle",
+    },
 };
 
 export default function KontaktPage() {
@@ -46,8 +64,8 @@ export default function KontaktPage() {
                             <Mail className="w-5 h-5 flex-shrink-0 mt-0.5 text-foreground" />
                             <div>
                                 <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-1">E-Mail</p>
-                                <a href="mailto:Rakanbedel7@gmail.com" className="text-sm text-black hover:text-foreground transition-colors">
-                                    Rakanbedel7@gmail.com
+                                <a href="mailto:gasthauszuerboerse@web.de" className="text-sm text-black hover:text-foreground transition-colors">
+                                    gasthauszuerboerse@web.de
                                 </a>
                             </div>
                         </div>

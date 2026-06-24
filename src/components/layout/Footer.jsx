@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
+import { usePathname, useRouter } from "next/navigation";
+import { scrollToSection } from "@/lib/lenis";
 
 const quickLinks = [
     { name: "Start", href: "/" },
@@ -12,6 +16,27 @@ const quickLinks = [
 ];
 
 export default function Footer() {
+    const pathname = usePathname();
+    const router = useRouter();
+
+    // Intercepts clicks on hash links (e.g. /#gastehaus) so Lenis scrolls smoothly
+    // instead of the browser jumping natively, mirroring Navbar's behavior.
+    function handleHashLink(e, href) {
+        const isHash = href.startsWith("/#");
+        if (!isHash) return; // let Next/Link handle normal routes naturally
+
+        e.preventDefault();
+        const id = href.replace("/#", "");
+
+        if (pathname === "/") {
+            // Already on home — just scroll
+            scrollToSection(id);
+        } else {
+            // Navigate home, ScrollOnMount will pick up the hash
+            router.push(href);
+        }
+    }
+
     return (
         <footer
             className="w-full"
@@ -75,6 +100,7 @@ export default function Footer() {
                             <li key={link.name}>
                                 <Link
                                     href={link.href}
+                                    onClick={(e) => handleHashLink(e, link.href)}
                                     className="text-sm text-gray-600 hover:text-black transition-colors"
                                 >
                                     {link.name}
@@ -103,8 +129,8 @@ export default function Footer() {
 
                         <li className="flex items-center gap-2 text-sm text-gray-600">
                             <Phone className="w-4 h-4 flex-shrink-0" />
-                            <a href="tel:+4951418180">
-                                +49 5141 8180
+                            <a href="tel:+4951419937973">
+                                +49 514 19937973
                             </a>
                         </li>
                     </ul>
