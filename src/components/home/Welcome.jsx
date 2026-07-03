@@ -10,7 +10,7 @@ export default function Welcome() {
                 {/* Image */}
                 <div className="w-full lg:w-[42%] xl:w-[480px] h-[300px] sm:h-[400px] lg:h-auto min-h-[480px] xl:h-[600px] relative flex-shrink-0 rounded-lg overflow-hidden">
                     <Image
-                        src="/images/welcome/hero-gasthaus-aussen-celle.webp"
+                        src="/images/welcome/welcome-gasthaus-aussen-celle.webp"
                         alt="Gasthaus zur Börse Außenansicht in Celle"
                         fill
                         className="object-cover"
