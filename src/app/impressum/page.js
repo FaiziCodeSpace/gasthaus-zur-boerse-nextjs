@@ -61,8 +61,8 @@ export default function ImpressumPage() {
                     <div className="text-sm sm:text-base text-gray-700 leading-relaxed flex flex-col gap-1">
                         <p>
                             Telefon:{" "}
-                            <a href="tel:+49514181803" className="text-black hover:text-foreground transition-colors">
-                                +49 514 181803
+                            <a href="tel:+051419937973" className="text-black hover:text-foreground transition-colors">
+                                +05 141 9937973
                             </a>
                         </p>
                         <p>

@@ -55,8 +55,8 @@ export default function KontaktPage() {
                             <Phone className="w-5 h-5 flex-shrink-0 mt-0.5 text-foreground" />
                             <div>
                                 <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-1">Telefon</p>
-                                <a href="tel:+49514181803" className="text-sm text-black hover:text-foreground transition-colors">
-                                    +49 514 181803
+                                <a href="tel:+051419937973" className="text-sm text-black hover:text-foreground transition-colors">
+                                    +05 141 9937973
                                 </a>
                             </div>
                         </div>
